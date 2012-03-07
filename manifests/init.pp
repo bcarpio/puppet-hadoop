@@ -121,5 +121,40 @@ class hadoop {
 		mode => "644",
 		alias => "mapred-site-xml",
 		content => template("hadoop/conf/mapred-site.xml.erb"),		
+	}
+	
+	file { "/home/hduser/.ssh/":
+		owner => "hduser",
+		group => "hadoop",
+		mode => "700",
+		ensure => "directory",
+		alias => "hduser-ssh-dir",
+	}
+	
+	file { "/home/hduser/.ssh/id_rsa.pub":
+		ensure => present,
+		owner => "hduser",
+		group => "hadoop",
+		mode => "644",
+		source => "puppet:///modules/hadoop/ssh/id_rsa.pub",
+		require => File["hduser-ssh-dir"],
+	}
+	
+	file { "/home/hduser/.ssh/id_rsa":
+		ensure => present,
+		owner => "hduser",
+		group => "hadoop",
+		mode => "600",
+		source => "puppet:///modules/hadoop/ssh/id_rsa",
+		require => File["hduser-ssh-dir"],
+	}
+	
+	file { "/home/hduser/.ssh/authorized_keys":
+		ensure => present,
+		owner => "hduser",
+		group => "hadoop",
+		mode => "644",
+		source => "puppet:///modules/hadoop/ssh/id_rsa.pub",
+		require => File["hduser-ssh-dir"],
 	}	
-}	
+}

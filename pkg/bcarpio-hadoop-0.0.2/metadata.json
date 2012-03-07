@@ -1,0 +1,33 @@
+{
+  "license": "UNKNOWN",
+  "source": "UNKNOWN",
+  "dependencies": [
+
+  ],
+  "types": [
+
+  ],
+  "project_page": "UNKNOWN",
+  "description": "UNKNOWN",
+  "summary": "Install hadoop and create hdfs file system. Read the README.markdown for more information",
+  "author": "Brian Carpio",
+  "version": "0.0.2",
+  "name": "bcarpio-hadoop",
+  "checksums": {
+    "metadata.json": "d34d0b70aba36510fbc2df4e667479ef",
+    "spec/spec.opts": "a600ded995d948e393fbe2320ba8e51c",
+    "spec/spec_helper.rb": "ca19ec4f451ebc7fdb035b52eae6e909",
+    "templates/home/bash_profile.erb": "724ea20d657f448f72ede2c010170eae",
+    "templates/conf/hadoop-env.sh.erb": "b4a50976705d367d863439fa9b48c7f2",
+    "manifests/init.pp": "a27827d2a373c5675ce8f69df309fd9d",
+    "tests/init.pp": "f8f7d7631f8c82d2f068acdb95bf5011",
+    "files/hadoop-0.20.203.0.tar.gz": "29a4a2f85ebb3fb2bb3c66b833fb723d",
+    "templates/conf/mapred-site.xml.erb": "5bb6506a2391176fa8ec3b9becce1cc7",
+    "Modulefile": "286c71f935a1b37495a778b36eead087",
+    "README.markdown": "2003d6576c13c8608130be5cec173781",
+    "README": "7ecfbb37a09181c422aa8887fe5f8e9b",
+    "manifests/params.pp": "d5020929e8f15871a1716b4725161107",
+    "templates/conf/hdfs-site.xml.erb": "ac646459b407cc9d13e610adcb85b806",
+    "templates/conf/core-site.xml.erb": "48da047d29fbde099d9b7b7677e2e42b"
+  }
+}

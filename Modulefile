@@ -1,11 +1,4 @@
 name    'bcarpio-hadoop'
-version '0.0.1'
-source 'UNKNOWN'
-author 'bcarpio'
-license 'UNKNOWN'
-summary 'UNKNOWN'
-description 'UNKNOWN'
-project_page 'UNKNOWN'
-
-## Add dependencies, if any:
-# dependency 'username/name', '>= 1.2.0'
+version '0.0.2'
+author 'Brian Carpio'
+summary 'Install hadoop and create hdfs file system. Read the README.markdown for more information'
