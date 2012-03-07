@@ -1,4 +1,4 @@
-# /etc/puppet/modules/hadoop/manafests/init.pp
+# /etc/puppet/modules/hadoop/manifests/params.pp
 
 class hadoop::params {
 
@@ -13,7 +13,7 @@ class hadoop::params {
 	}
         
 	$slaves = $::hostname ? {
-		default			=> [hadoop-02, hadoop-03, hadoop-04] 
+		default			=> [hadoop-02, hadoop-03] 
 	}
 	$hdfsport = $::hostname ? {
 		default			=> "8020",
