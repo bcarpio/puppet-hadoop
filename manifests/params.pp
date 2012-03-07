@@ -13,7 +13,7 @@ class hadoop::params {
 	}
         
 	$slaves = $::hostname ? {
-		default			=> [hadoop-02, hadoop-03] 
+		default			=> [hadoop01, hadoop-02, hadoop-03] 
 	}
 	$hdfsport = $::hostname ? {
 		default			=> "8020",
