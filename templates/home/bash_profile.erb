@@ -1,0 +1,2 @@
+export PATH=$PATH:<%= scope.lookupvar('hadoop::params::java_home') %>/bin:<%= scope.lookupvar('hadoop::params::hadoop_base') %>/hadoop/bin
+export JAVA_HOME=<%= scope.lookupvar('hadoop::params::java_home') %>
