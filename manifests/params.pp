@@ -12,12 +12,15 @@ class hadoop::params {
 		default			=> "hadoop01",
 	}
         
+	$slaves = $::hostname ? {
+		default			=> [hadoop-02, hadoop-03, hadoop-04] 
+	}
 	$hdfsport = $::hostname ? {
 		default			=> "8020",
 	}
 
 	$replication = $::hostname ? {
-		default			=> "2",
+		default			=> "3",
 	}
 
 	$jobtrackerport = $::hostname ? {
@@ -32,5 +35,4 @@ class hadoop::params {
 	$hdfs_path = $::hostname ? {
 		default			=> "/home/hduser/hdfs",
 	}
-
 }

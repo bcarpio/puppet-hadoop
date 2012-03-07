@@ -3,6 +3,10 @@
 class hadoop {
 
 	require hadoop::params
+	require hadoop::cluster
+
+	include hadoop::master
+	include hadoop::slave
 	
 	group { "hadoop":
 		ensure => present,
@@ -70,7 +74,14 @@ class hadoop {
 		refreshonly => true,
 		subscribe => File["hadoop-source-tgz"],
 		user => "hduser",
-		before => File["hadoop-symlink"]
+		before => [ File["hadoop-symlink"], File["hadoop-app-dir"]]
+	}
+	file { "${hadoop::params::hadoop_base}/hadoop-${hadoop::params::version}":
+		ensure => "directory",
+		mode => 0644,
+		owner => "hduser",
+		group => "hadoop",
+		alias => "hadoop-app-dir"
 	}
 		
 	file { "${hadoop::params::hadoop_base}/hadoop":
