@@ -14,7 +14,7 @@ The ssh keys for the hduser are in ~/files/ssh/ make sure you edit these files a
 
 # Cluster Mode #
 
-Currently the configuration is setup for a cluster with atleast 3 nodes. Each node needs to be named in params.pp the fisrt node should be defined as master and the other two nodes should be defined as $slaves.
+Currently the configuration is setup for a cluster with atleast 3 nodes. Each node needs to be named in params.pp the first node should be defined as $master and the other two nodes should be defined as $slaves.
 
 If adding more then 3 nodes up $replication value to the number of total nodes in your cluster. Also add each node to the $slaves variable. 
 
