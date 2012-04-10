@@ -5,8 +5,8 @@ class hadoop {
 	require hadoop::params
 	require hadoop::cluster
 
-	include hadoop::master
-	include hadoop::slave
+	include hadoop::cluster::master
+	include hadoop::cluster::slave
 	
 	group { "hadoop":
 		ensure => present,
