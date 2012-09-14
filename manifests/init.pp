@@ -1,5 +1,4 @@
-# /etc/puppet/modules/hadoop/manafests/init.pp
-
+# /etc/puppet/modules/hadoop/manifests/init.pp
 class hadoop {
 
 	require hadoop::params
@@ -7,7 +6,9 @@ class hadoop {
 
 	include hadoop::cluster::master
 	include hadoop::cluster::slave
-	
+
+        Exec { path => "/bin" }
+
 	group { "hadoop":
 		ensure => present,
 		gid => "800"
