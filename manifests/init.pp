@@ -123,6 +123,7 @@ class hadoop {
 		user => "hduser",
 		alias => "format-hdfs",
 		refreshonly => true,
+		path => "/bin:/usr/bin:/usr/local/bin",
 		subscribe => File["hdfs-dir"],
 		require => [ File["hadoop-symlink"], File["java-app-dir"], File["hduser-bash_profile"], File["mapred-site-xml"], File["hdfs-site-xml"], File["core-site-xml"], File["hadoop-env-sh"]]
 	}
