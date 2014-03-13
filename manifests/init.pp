@@ -1,5 +1,5 @@
 # /etc/puppet/modules/hadoop/manifests/init.pp
-class hadoop {
+class hadoop::init {
 
 	require hadoop::params
 	require hadoop::cluster
@@ -14,7 +14,7 @@ class hadoop {
 		gid => "800"
 	}
 
-	user { "hduser":
+	user { "hdfs":
 		ensure => present,
 		comment => "Hadoop",
 		password => "!!",
