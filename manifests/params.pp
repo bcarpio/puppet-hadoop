@@ -5,7 +5,7 @@ class hadoop::params {
 	include java::params
 
 	$version = $::hostname ? {
-		default			=> "0.20.203.0",
+		default			=> "2.3.0",
 	}
         
 	$master = $::hostname ? {
