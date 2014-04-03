@@ -95,7 +95,7 @@ class hadoop {
 		before => [ File["core-site-xml"], File["hdfs-site-xml"], File["mapred-site-xml"], File["hadoop-env-sh"]]
 	}
 	
-	file { "${hadoop::params::hadoop_base}/hadoop-${hadoop::params::version}/conf/core-site.xml":
+	file { "${hadoop::params::hadoop_base}/hadoop-${hadoop::params::version}/etc/hadoop/core-site.xml":
 		owner => "hduser",
 		group => "hadoop",
 		mode => "644",
@@ -103,7 +103,7 @@ class hadoop {
 		content => template("hadoop/conf/core-site.xml.erb"),
 	}
 	
-	file { "${hadoop::params::hadoop_base}/hadoop-${hadoop::params::version}/conf/hdfs-site.xml":
+	file { "${hadoop::params::hadoop_base}/hadoop-${hadoop::params::version}/etc/hadoop/hdfs-site.xml":
 		owner => "hduser",
 		group => "hadoop",
 		mode => "644",
@@ -111,7 +111,7 @@ class hadoop {
 		content => template("hadoop/conf/hdfs-site.xml.erb"),
 	}
 	
-	file { "${hadoop::params::hadoop_base}/hadoop-${hadoop::params::version}/conf/hadoop-env.sh":
+	file { "${hadoop::params::hadoop_base}/hadoop-${hadoop::params::version}/etc/hadoop/hadoop-env.sh":
 		owner => "hduser",
 		group => "hadoop",
 		mode => "644",
@@ -128,7 +128,7 @@ class hadoop {
 		require => [ File["hadoop-symlink"], File["java-app-dir"], File["hduser-bash_profile"], File["mapred-site-xml"], File["hdfs-site-xml"], File["core-site-xml"], File["hadoop-env-sh"]]
 	}
 	
-	file { "${hadoop::params::hadoop_base}/hadoop-${hadoop::params::version}/conf/mapred-site.xml":
+	file { "${hadoop::params::hadoop_base}/hadoop-${hadoop::params::version}/etc/hadoop/mapred-site.xml":
 		owner => "hduser",
 		group => "hadoop",
 		mode => "644",

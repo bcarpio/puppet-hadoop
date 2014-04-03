@@ -6,7 +6,7 @@ class hadoop::cluster {
 
 class hadoop::cluster::master {
 	
-        file { "${hadoop::params::hadoop_base}/hadoop-${hadoop::params::version}/conf/masters":
+        file { "${hadoop::params::hadoop_base}/hadoop-${hadoop::params::version}/etc/hadoop/masters":
 		owner => "hduser",
 		group => "hadoop",
 		mode => "644",
@@ -17,7 +17,7 @@ class hadoop::cluster::master {
 }
 
 class hadoop::cluster::slave {
-        file { "${hadoop::params::hadoop_base}/hadoop-${hadoop::params::version}/conf/slaves":
+        file { "${hadoop::params::hadoop_base}/hadoop-${hadoop::params::version}/etc/hadoop/slaves":
 		owner => "hduser",
 		group => "hadoop",
 		mode => "644",
